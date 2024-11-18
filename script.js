@@ -25,10 +25,20 @@ function handleKeydown(event) {
 
         }else{
             fontSize *= 1.1;
-            balloon.style.fontSize
+            balloon.style.fontSize = fontSize + 'px';
+            event.preventDefault();
         }
     }
 }
+else if (event.key == 'ArrowDown') {
+    fontSize *= 0.9;
+    balloon.style.fontSize = fontSize + 'px';
+    event.preventDefault();
+}
+window.addEventListener('keydown', handleKeydown);
+
+
+
 // 2. The index.html page has a tabbed layout. Make the default state of the layout show
 // the first tab, and make it so that when you click the links at the top the correct
 // tab's contents are displayed and the others are hidden. Prevent the default action of
